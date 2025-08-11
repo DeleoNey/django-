@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Home - Django Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Sidebar: форма створення нового посту -->
+    <aside class="col-md-4 sidebar p-3">
+      <h4>Create New Post</h4>
+{#      <form method="POST" action="{% url 'create_post' %}">#}
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" rows="4" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="date_posted">Date Posted</label>
+          <input type="date" id="date_posted" name="date_posted" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Add Post</button>
+      </form>
+    </aside>
+
+    <!-- Main Content: список постів -->
+    <main class="col-md-8 content-area">
+      <h3>Posts</h3>
+      {% for post in posts %}
+      <div class="post-block mb-4 p-3 rounded shadow-sm">
+        <h5 class="post-title">{{ post.title }}</h5>
+        <p><strong>Author:</strong> {{ post.author }}</p>
+        <p>{{ post.content }}</p>
+        <small class="text-muted">Posted on {{ post.date_posted }}</small>
+      </div>
+      {% empty %}
+      <p>No posts available.</p>
+      {% endfor %}
+    </main>
+</div>
+{% endblock %}

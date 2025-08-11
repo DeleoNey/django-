@@ -1,10 +1,33 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+posts = [
+    {
+        'author': 'Max',
+        'title': 'My First Post',
+        'content': 'My first post content',
+        'date_posted': 'August 11, 2025',
+    },
+    {
+        'author': 'Andrii',
+        'title': 'My First Post',
+        'content': 'My first post content',
+        'date_posted': 'August 11, 2025',
+    },
+    {
+        'author': 'Petro',
+        'title': 'Post about cats',
+        'content': 'Cats are cute',
+        'date_posted': 'August 08, 2025',
+    }
+]
 
 
 def home(request):
-    return HttpResponse("<h1>Hello, world. You're at the polls page.</h1>")
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/home.html', context)
 
 
 def about(request):
-    return HttpResponse("<h1>About this page</h1>")
+    return render(request, 'blog/about.html', {'title': 'About'})
