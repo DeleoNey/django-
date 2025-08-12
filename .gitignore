@@ -46,3 +46,6 @@ coverage.xml
 
 # macOS
 .DS_Store
+
+# sqlite3
+db.sqlite3
