@@ -37,7 +37,7 @@
         <h5 class="post-title">{{ post.title }}</h5>
         <p><strong>Author:</strong> {{ post.author }}</p>
         <p>{{ post.content }}</p>
-        <small class="text-muted">Posted on {{ post.date_posted }}</small>
+        <small class="text-muted">Posted on {{ post.date_posted|date:"H:i d F, Y" }}</small>
       </div>
       {% empty %}
       <p>No posts available.</p>
