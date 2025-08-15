@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<h2>Are you sure you want to log out?</h2>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Log out</button>
+</form>
+
+<div class="border-top pt-3" style="margin-top: 20px;">
+    <small class="text-muted">
+        Changed your mind? <a href="{% url 'blog-home' %}">Go back to home</a>
+    </small>
+</div>
+{% endblock content %}
