@@ -32,23 +32,25 @@
   </aside>
 
   <!-- Main Content: список постів -->
-  <main class="col-md-8 content-area">
-    <h3>Posts</h3>
-    {% for post in posts %}
-        <div class="post-block mb-4 p-3 rounded shadow-sm">
-        <div class="post-meta">
-          <img class="article-img" src="{{ post.author.profile.image.url }}" alt="{{ post.author }}">
-          <div>
-              <h5><a class="post-title mb-1" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
-            <small class="text-muted">by {{ post.author }}</small>
-          </div>
+    <main class="col-md-8 content-area">
+        <h3>Posts</h3>
+        <div class="post-block mb-4 p-3 rounded shadow-sm position-relative">
+            <div class="post-meta">
+                <img class="article-img" src="{{ object.author.profile.image.url }}" alt="{{ post.author }}">
+                <div>
+                    <h5 class="post-title mb-1">{{ object.title }}</h5>
+                    <small class="text-muted">by {{ object.author }}</small>
+                </div>
+            </div>
+            <p class="mt-2">{{ object.content }}</p>
+            <small class="text-muted">Posted on {{ object.date_posted|date:"H:i d F, Y" }}</small>
+            {% if object.author == user %}
+            <div class="post-actions">
+                <a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+            </div>
+            {% endif %}
         </div>
-        <p class="mt-2">{{ post.content }}</p>
-        <small class="text-muted">Posted on {{ post.date_posted|date:"H:i d F, Y" }}</small>
-      </div>
-    {% empty %}
-      <p>No posts available.</p>
-    {% endfor %}
-  </main>
+    </main>
 </div>
 {% endblock %}

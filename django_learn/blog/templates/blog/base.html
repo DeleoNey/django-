@@ -34,7 +34,7 @@
         <a class="nav-link" href="/about/">About</a>
       </li>
       <li class="nav-item {% if request.path == '/posts/' %}active{% endif %}">
-        <a class="nav-link" href="/posts/">Posts</a>
+        <a class="nav-link" href="/">Posts</a>
       </li>
       <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}">
         <a class="nav-link" href="/contact/">Contact</a>
@@ -44,6 +44,9 @@
         {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'post-create' %}">New Post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>

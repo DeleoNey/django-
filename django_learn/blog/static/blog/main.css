@@ -67,10 +67,10 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: 10px;
 }
-.post-block:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 150, 136, 0.2);
-}
+/*.post-block:hover {*/
+/*    transform: translateY(-3px);*/
+/*    box-shadow: 0 8px 16px rgba(0, 150, 136, 0.2);*/
+/*}*/
 
 /* Заголовки постів */
 .post-title {
@@ -174,4 +174,19 @@ body {
 /* Відступи та вирівнювання форми */
 .profile-form-container .form-group {
     margin-top: 15px;
+}
+
+.post-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.post-actions .btn {
+    margin-left: 5px;
+}
+
+/* Додатковий відступ знизу для контенту, щоб кнопки не перекривали текст */
+.post-block {
+    padding-top: 15px !important;
 }
