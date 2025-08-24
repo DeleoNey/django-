@@ -109,6 +109,20 @@ body {
     box-shadow: 0 6px 20px rgba(0, 150, 136, 0.15);
 }
 
+.profile-container2 {
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0, 150, 136, 0.15);
+    margin: 40px auto;
+}
+
+.profile-container h3 {
+    font-weight: 700;
+    color: #00796b;
+}
+
 /* Хедер профілю */
 .profile-header {
     display: flex;
@@ -151,6 +165,14 @@ body {
     background: #f0fdfd;
 }
 
+.profile-form-fieldset {
+    border: 1px solid #b2dfdb;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f0fdfd;
+    margin-bottom: 15px;
+}
+
 .profile-form-container legend.form-legend {
     font-size: 1.2rem;
     font-weight: 600;
@@ -165,6 +187,20 @@ body {
     border-radius: 8px;
     padding: 8px 20px;
     transition: 0.3s;
+}
+
+.btn {
+    background: linear-gradient(90deg, #00bfa5, #00695c);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #00695c, #004d40);
 }
 
 .profile-form-container .btn-gradient:hover {
