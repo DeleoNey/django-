@@ -186,7 +186,44 @@ body {
     margin-left: 5px;
 }
 
-/* Додатковий відступ знизу для контенту, щоб кнопки не перекривали текст */
 .post-block {
     padding-top: 15px !important;
+}
+
+.custom-pagination .page-link {
+    border-radius: 8px;
+    margin: 0 4px;
+    border: 1px solid #b2dfdb;
+    color: #00796b;
+    background-color: #f0fdfd;
+    font-weight: 500;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 150, 136, 0.1);
+}
+
+.custom-pagination .page-link:hover {
+    background: #00695c;
+    color: #fff;
+    border-color: #00695c;
+    box-shadow: 0 4px 10px rgba(0, 150, 136, 0.2);
+}
+
+.custom-pagination .page-item.active .page-link {
+    background: #00695c;
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 150, 136, 0.25);
+    font-weight: 600;
+}
+
+.author-link {
+    color: #00796b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.author-link:hover {
+    color: #004d40;
+    text-decoration: underline;
 }

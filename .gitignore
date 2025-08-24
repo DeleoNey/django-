@@ -51,4 +51,3 @@ coverage.xml
 # sqlite3
 db.sqlite3
 /django_learn/media/
-/posts.json
